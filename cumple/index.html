@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Ali Cumple 18! - Fiesta Tecnológica</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #6c63ff;
+            --secondary: #36d1dc;
+            --accent: #ff6b9d;
+            --light: #f8f9ff;
+            --dark: #1a1a2e;
+            --terminal: #2d2d44;
+            --success: #4cc9f0;
+            --warning: #ffd166;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header con efecto de terminal */
+        .terminal-header {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 12px 12px 0 0;
+            padding: 25px 30px;
+            margin-bottom: 30px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(108, 99, 255, 0.3);
+            text-align: center;
+            border-bottom: 5px solid var(--accent);
+        }
+
+        .terminal-title {
+            color: white;
+            font-size: 2.5rem;
+            text-align: center;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+            margin-bottom: 10px;
+        }
+
+        .terminal-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 300;
+        }
+
+        .age-badge {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            font-weight: bold;
+            font-size: 1.8rem;
+            padding: 8px 20px;
+            border-radius: 50px;
+            margin-top: 15px;
+            box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Contenido principal */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .info-card {
+            background: linear-gradient(to bottom right, rgba(45, 45, 68, 0.9), rgba(40, 40, 60, 0.9));
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            border-left: 5px solid var(--primary);
+        }
+
+        .info-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+        }
+
+        .card-title {
+            color: var(--secondary);
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .card-title i {
+            color: var(--accent);
+            font-size: 1.8rem;
+        }
+
+        .event-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .detail-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            transition: transform 0.3s, background 0.3s;
+            border: 1px solid rgba(108, 99, 255, 0.2);
+        }
+
+        .detail-item:hover {
+            transform: translateY(-5px);
+            background: rgba(108, 99, 255, 0.1);
+            box-shadow: 0 8px 15px rgba(108, 99, 255, 0.2);
+        }
+
+        .detail-label {
+            color: var(--secondary);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .detail-value {
+            color: var(--light);
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Carrusel de imágenes */
+        .carousel-section {
+            margin: 40px 0;
+        }
+
+        .section-title {
+            color: var(--secondary);
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+            height: 400px;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 46, 0.8);
+            color: white;
+            padding: 15px;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(108, 99, 255, 0.8);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-btn:hover {
+            background: var(--primary);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-btn.prev {
+            left: 20px;
+        }
+
+        .carousel-btn.next {
+            right: 20px;
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .indicator.active {
+            background: var(--accent);
+            transform: scale(1.2);
+        }
+
+        /* Contador */
+        .countdown {
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.1), rgba(54, 209, 220, 0.1));
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(108, 99, 255, 0.2);
+        }
+
+        .countdown-title {
+            color: var(--secondary);
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .countdown-value {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 10px 20px rgba(108, 99, 255, 0.3);
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .countdown-label {
+            color: var(--secondary);
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        /* Interactividad */
+        .interactive-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .interactive-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(108, 99, 255, 0.2);
+            cursor: pointer;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .interactive-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(108, 99, 255, 0.2);
+            background: rgba(108, 99, 255, 0.1);
+        }
+
+        .interactive-card i {
+            font-size: 3.5rem;
+            color: var(--accent);
+            margin-bottom: 25px;
+        }
+
+        .interactive-card h3 {
+            color: var(--secondary);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .interactive-card p {
+            color: var(--light);
+            opacity: 0.9;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .spotify-link {
+            margin-top: 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            padding: 8px 15px;
+            background: rgba(255, 107, 157, 0.1);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 107, 157, 0.3);
+            transition: all 0.3s;
+        }
+
+        .spotify-link:hover {
+            background: rgba(255, 107, 157, 0.2);
+            transform: scale(1.05);
+        }
+
+        /* Botón de Google Fotos */
+        .google-photos-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #4285F4, #34A853);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 15px 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .google-photos-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(66, 133, 244, 0.3);
+        }
+
+        /* Galería de recuerdos */
+        .memories-gallery {
+            margin: 50px 0;
+            padding: 30px;
+            background: linear-gradient(to bottom right, rgba(45, 45, 68, 0.9), rgba(40, 40, 60, 0.9));
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            border-left: 5px solid var(--primary);
+        }
+
+        .memories-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .memory-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(108, 99, 255, 0.2);
+        }
+
+        .memory-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(108, 99, 255, 0.2);
+        }
+
+        .memory-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .memory-content {
+            padding: 20px;
+        }
+
+        .memory-message {
+            color: var(--light);
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .memory-date {
+            color: var(--secondary);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        .empty-memories {
+            text-align: center;
+            padding: 40px;
+            color: var(--secondary);
+            font-size: 1.2rem;
+            grid-column: 1 / -1;
+        }
+
+        /* Mensaje final */
+        .message {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(to right, rgba(108, 99, 255, 0.1), rgba(255, 107, 157, 0.1));
+            border-radius: 15px;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(108, 99, 255, 0.2);
+        }
+
+        .message h2 {
+            color: var(--secondary);
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+        }
+
+        .message p {
+            font-size: 1.3rem;
+            color: var(--light);
+            max-width: 800px;
+            margin: 0 auto 20px;
+            line-height: 1.8;
+        }
+
+        .signature {
+            color: var(--accent);
+            font-size: 1.8rem;
+            margin-top: 30px;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        /* Efectos de partículas */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+
+        /* Instrucciones */
+        .photo-instructions {
+            width: 100%;
+            text-align: left;
+        }
+
+        .instructions-list {
+            color: var(--light);
+            margin-left: 20px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .instructions-list li {
+            margin-bottom: 8px;
+        }
+
+        .qr-container {
+            text-align: center;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .terminal-title {
+                font-size: 1.8rem;
+            }
+            
+            .countdown-value {
+                width: 80px;
+                height: 80px;
+                font-size: 2rem;
+            }
+            
+            .countdown-container {
+                gap: 15px;
+            }
+            
+            .carousel {
+                height: 300px;
+            }
+            
+            .event-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .interactive-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .interactive-card {
+                min-height: auto;
+            }
+            
+            .memories-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* SECCIÓN DE CONFIRMACIÓN POR WHATSAPP */
+        .whatsapp-confirmation {
+            background: linear-gradient(135deg, rgba(37, 211, 102, 0.1), rgba(18, 140, 126, 0.1));
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(37, 211, 102, 0.2);
+        }
+
+        .whatsapp-title {
+            color: #25D366;
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .whatsapp-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            color: #25D366;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .whatsapp-input {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.07);
+            border: 2px solid rgba(37, 211, 102, 0.3);
+            border-radius: 10px;
+            color: var(--light);
+            font-size: 1.1rem;
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-input:focus {
+            outline: none;
+            border-color: #25D366;
+            box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.2);
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 1.3rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(37, 211, 102, 0.3);
+            background: linear-gradient(135deg, #128C7E, #25D366);
+        }
+
+        .whatsapp-btn:active {
+            transform: translateY(-2px);
+        }
+
+        .whatsapp-qr {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+        }
+
+        .whatsapp-instructions {
+            background: rgba(37, 211, 102, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 25px;
+            border-left: 4px solid #25D366;
+        }
+
+        .whatsapp-instructions p {
+            color: var(--light);
+            margin: 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .whatsapp-instructions i {
+            color: #25D366;
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Partículas de fondo -->
+    <div class="particles" id="particles"></div>
+
+    <div class="container">
+        <!-- Header con terminal -->
+        <header class="terminal-header">
+            <h1 class="terminal-title"><i class="fas fa-code"></i> SOY LEGAL</h1>
+            <div class="terminal-subtitle">¡daleee que soy legall</div>
+            <div class="age-badge">18 AÑOS</div>
+        </header>
+
+        <!-- Contenido principal -->
+        <div class="main-content">
+            <!-- Panel de información -->
+            <div class="info-card">
+                <h2 class="card-title"><i class="fas fa-birthday-cake"></i> DETALLES DEL EVENTO</h2>
+                
+                <div class="event-details">
+                    <div class="detail-item">
+                        <div class="detail-label"><i class="fas fa-user"></i> CUMPLEAÑERA</div>
+                        <div class="detail-value"><span class="highlight">Ali</span></div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label"><i class="fas fa-calendar-alt"></i> FECHA</div>
+                        <div class="detail-value">Martes  <span class="highlight">23 de Diciembre 2025</span></div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label"><i class="fas fa-clock"></i> HORARIO</div>
+                        <div class="detail-value"><span class="highlight">12:00 AM</span> a <span class="highlight">12:00 PM</span></div>
+                        <div style="font-size: 0.9rem; margin-top: 8px; color: var(--secondary);">(dia completo en casa)</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label"><i class="fas fa-map-marker-alt"></i> LUGAR</div>
+                        <div class="detail-value">Carlos paz, Villa Lago azul</div>
+                        <div style="font-size: 0.9rem; margin-top: 8px; color: var(--secondary);">Direccion por whatsapp</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carrusel de imágenes -->
+        <section class="carousel-section">
+            <h2 class="section-title">Ali bb</h2>
+            
+            <div class="carousel-container">
+                <div class="carousel" id="carousel">
+                    <div class="carousel-slide">
+                        <img src="Imagen 195.jpg" alt="Decoración de fiesta">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="Imagen 184.jpg" alt="Comida para la fiesta">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="Imagen 123.jpg" alt="Ambiente festivo">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="Imagen 087.jpg" alt="Música y baile">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="Imagen 050.jpg" alt="Pastel de cumpleaños">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="Imagen 030.jpg" alt="Comida para la fiesta">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="Imagen 024.jpg" alt="Ambiente festivo">
+                    </div>
+                </div>
+                
+                <button class="carousel-btn prev" id="prevBtn">&#10094;</button>
+                <button class="carousel-btn next" id="nextBtn">&#10095;</button>
+                
+                <div class="carousel-indicators" id="indicators"></div>
+            </div>
+        </section>
+
+        <!-- Contador regresivo -->
+        <section class="countdown">
+            <h2 class="countdown-title">Tiempo restante para los 18</h2>
+            <div class="countdown-container">
+                <div class="countdown-item">
+                    <div class="countdown-value" id="days">00</div>
+                    <div class="countdown-label">Días</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="hours">00</div>
+                    <div class="countdown-label">Horas</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="minutes">00</div>
+                    <div class="countdown-label">Minutos</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="seconds">00</div>
+                    <div class="countdown-label">Segundos</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección interactiva -->
+        <section class="interactive-section">
+            <div class="interactive-card" id="musicCard">
+                <i class="fab fa-spotify"></i>
+                <h3>¡Ayudame a crear una playlist!</h3>
+                <p>Haz clic en el botón de abajo para acceder a la playlist en Spotify y añade las canciones que no pueden faltar.</p>
+                <a href="https://open.spotify.com/playlist/0TXHHrSz0La5HvmAOcyiwR?si=c92ab2d42b1448ec&pt=c311dc38d80fa8ef208ff329d47a6ccb" target="_blank" class="spotify-link">
+                    <i class="fab fa-spotify"></i> Ir a la playlist de Spotify
+                </a>
+            </div>
+            
+            <div class="interactive-card" id="memoryCard">
+                <i class="fas fa-images"></i>
+                <h3>Subí fotos al álbum compartido</h3>
+                <p>¡Ayudá a crear el álbum de recuerdos del cumpleaños! Agregá tus fotos favoritas directamente al álbum de Google Fotos.</p>
+                
+                <div class="photo-instructions">
+                    <div style="margin: 20px 0;">
+                        <p style="color: var(--secondary); margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
+                            <i class="fas fa-mobile-alt"></i> <strong>Cómo subir fotos:</strong>
+                        </p>
+                        <ol class="instructions-list">
+                            <li>Hacé clic en el botón verde de abajo</li>
+                            <li>Se abrirá el álbum en Google Fotos</li>
+                            <li>Tocá el botón <strong>"+"</strong> o <strong>"Agregar fotos"</strong></li>
+                            <li>Seleccioná las fotos que quieras compartir</li>
+                            <li>¡Listo!</li>
+                        </ol>
+                    </div>
+                    
+                    <!-- Botón principal para Google Fotos -->
+                    <a href="https://photos.app.goo.gl/HiZoYYuK6FyyQdVC8" 
+                       target="_blank"
+                       class="google-photos-btn">
+                        <i class="fab fa-google"></i> Abrir Álbum de Google Fotos
+                    </a>
+                    
+                    <!-- QR Code para acceso rápido -->
+                    <div class="qr-container">
+                        <p style="color: var(--secondary); margin-bottom: 10px;">
+                            <i class="fas fa-qrcode"></i> <strong>Escanea este código QR</strong>
+                        </p>
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://photos.app.goo.gl/HiZoYYuK6FyyQdVC8&format=svg&color=6c63ff&bgcolor=1a1a2e" 
+                             alt="QR Code para álbum de Google Fotos"
+                             style="width: 180px; height: 180px; border-radius: 12px; padding: 10px; background: white; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                        <p style="color: var(--light); font-size: 0.9rem; margin-top: 10px; opacity: 0.8;">
+                            Escanealo con la cámara de tu teléfono
+                        </p>
+                    </div>
+                    
+                    <!-- Información adicional -->
+                    <div style="background: rgba(66, 133, 244, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px; border-left: 4px solid #4285F4;">
+                        <p style="color: var(--light); margin: 0; display: flex; align-items: flex-start; gap: 10px;">
+                            <i class="fas fa-info-circle" style="color: #34A853;"></i>
+                            <span><strong>Todas las fotos</strong> que subas llegarán directamente al álbum.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NUEVA SECCIÓN: Confirmación por WhatsApp -->
+        <section class="whatsapp-confirmation">
+            <h2 class="whatsapp-title">
+                <i class="fab fa-whatsapp"></i> ¡Confirmá tu asistencia!
+            </h2>
+            
+            <p style="color: var(--light); font-size: 1.2rem; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Mandame un WhatsApp para confirmar que vas a venir.
+            </p>
+            
+          
+                
+                <button type="button" class="whatsapp-btn" id="sendWhatsAppBtn">
+                    <i class="fab fa-whatsapp"></i> Enviar confirmación por WhatsApp
+                </button>
+            </div>
+            
+            <!-- QR para WhatsApp -->
+            <div class="whatsapp-qr">
+                <p style="color: var(--secondary); margin-bottom: 15px; font-weight: 600;">
+                    <i class="fas fa-qrcode"></i> O escaneá este código QR para escribirme directamente:
+                </p>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://wa.me/543517545976?text=Hola%20Ali!%20Quiero%20confirmar%20mi%20asistencia%20a%20tus%2018%20años.%20Mi%20nombre%20es%3A&format=svg&color=25D366&bgcolor=1a1a2e" 
+                     alt="QR Code para WhatsApp de Ali"
+                     style="width: 180px; height: 180px; border-radius: 12px; padding: 10px; background: white;">
+                <p style="color: var(--light); font-size: 0.9rem; margin-top: 10px; opacity: 0.8;">
+                    Escaneá con la cámara de tu teléfono
+                </p>
+            </div>
+            
+            <!-- Instrucciones -->
+            <div class="whatsapp-instructions">
+                <p>
+                    <i class="fas fa-info-circle"></i>
+                    <span>Al hacer clic en el botón, se abrirá WhatsApp con un mensaje predefinido.</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- Mensaje final -->
+        <section class="message">
+            <h2><i class="fas fa-terminal"></i> MENSAJE FINAL</h2>
+            <p>Sin regalo no entran!!.</p>
+            <p>Hablo enserio eh</p>
+            <p>No faltes!!! Tu presencia es el mejor regalo que puedo recibir en mis 18 años.</p>
+            <p class="signature">¡Te espero!<br>~ Ali ~</p>
+        </section>
+    </div>
+
+    <script>
+        // Crear partículas de fondo
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 80;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Posición aleatoria
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                
+                // Tamaño aleatorio
+                const size = Math.random() * 5 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Color aleatorio de la paleta
+                const colors = ['#6c63ff', '#36d1dc', '#ff6b9d', '#4cc9f0', '#ffd166'];
+                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                
+                // Opacidad aleatoria
+                particle.style.opacity = Math.random() * 0.6 + 0.2;
+                
+                // Animación
+                const duration = Math.random() * 20 + 10;
+                const delay = Math.random() * 5;
+                particle.style.animation = `float ${duration}s ease-in-out ${delay}s infinite`;
+                
+                // Crear keyframes para la animación flotante
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes float {
+                        0%, 100% { transform: translate(0, 0) rotate(0deg); }
+                        25% { transform: translate(${Math.random() * 60 - 30}px, ${Math.random() * 60 - 30}px) rotate(90deg); }
+                        50% { transform: translate(${Math.random() * 60 - 30}px, ${Math.random() * 60 - 30}px) rotate(180deg); }
+                        75% { transform: translate(${Math.random() * 60 - 30}px, ${Math.random() * 60 - 30}px) rotate(270deg); }
+                    }
+                `;
+                document.head.appendChild(style);
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Contador regresivo - CORREGIDO para 23 de diciembre de 2025
+        function updateCountdown() {
+            // Fecha del evento: 23 de diciembre de 2025 a las 00:00
+            const eventDate = new Date(2025, 11, 23, 0, 0, 0); // Diciembre es mes 11 (0-indexado)
+            const now = new Date();
+            
+            const timeDiff = eventDate.getTime() - now.getTime();
+            
+            // Si el tiempo es negativo (ya pasó la fecha), establecer a cero
+            if (timeDiff < 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                return;
+            }
+            
+            const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        // Carrusel de imágenes
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const carousel = document.getElementById('carousel');
+        const indicatorsContainer = document.getElementById('indicators');
+
+        // Crear indicadores
+        slides.forEach((_, index) => {
+            const indicator = document.createElement('div');
+            indicator.classList.add('indicator');
+            if (index === 0) indicator.classList.add('active');
+            indicator.addEventListener('click', () => goToSlide(index));
+            indicatorsContainer.appendChild(indicator);
+        });
+
+        // Función para cambiar de slide
+        function goToSlide(slideIndex) {
+            if (slideIndex < 0) slideIndex = slides.length - 1;
+            if (slideIndex >= slides.length) slideIndex = 0;
+            
+            currentSlide = slideIndex;
+            carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Actualizar indicadores
+            document.querySelectorAll('.indicator').forEach((indicator, index) => {
+                if (index === currentSlide) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+        }
+
+        // Autoavance del carrusel
+        let slideInterval = setInterval(() => {
+            goToSlide(currentSlide + 1);
+        }, 5000);
+
+        // Detener autoavance al interactuar
+        carousel.addEventListener('mouseenter', () => clearInterval(slideInterval));
+        carousel.addEventListener('mouseleave', () => {
+            slideInterval = setInterval(() => {
+                goToSlide(currentSlide + 1);
+            }, 5000);
+        });
+
+        // Botones del carrusel
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            goToSlide(currentSlide - 1);
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            goToSlide(currentSlide + 1);
+        });
+
+       // SISTEMA DE CONFIRMACIÓN POR WHATSAPP (SIN FORMULARIO)
+      document.getElementById('sendWhatsAppBtn').addEventListener('click', function () {
+
+    const phoneNumber = '543517545976'; // WhatsApp de Ali
+
+    const whatsappText = `Hola Ali! 👋🎉
+    Confirmo mi asistencia a tus 18 años 🥳
+
+  📅 23 de Diciembre 2025
+  🕛 12:00 AM a 12:00 PM
+  📍 Carlos Paz, Villa Lago Azul`;
+
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappText)}`;
+
+    window.open(whatsappUrl, '_blank');
+});
+
+        // Inicializar efectos cuando la página cargue
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            updateCountdown();
+            
+            // Actualizar el contador cada segundo
+            setInterval(updateCountdown, 1000);
+            
+            // Efecto de entrada para los elementos
+            const elements = document.querySelectorAll('.info-card, .carousel-section, .countdown, .interactive-card, .whatsapp-confirmation, .message');
+            elements.forEach((element, index) => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    element.style.transition = 'opacity 0.8s, transform 0.8s';
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }, 300 + (index * 150));
+            });
+        });
+    </script>
+</body>
+</html>
